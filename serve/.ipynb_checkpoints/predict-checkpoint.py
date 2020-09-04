@@ -94,9 +94,12 @@ def predict_fn(input_data, model):
     result = None
     
     # Solution:
-    with torch.no_grad():
-        output = model.forward(data)
-    
-    result = np.round(output.cpu().numpy()) # rounding of the value of the predicted output
+
+    with torch.no_grad(): # Deactivates autgrad engine
+        output = model(data)
+        
+    # Rounds-of our output
+    # If output is less than 0.5 then it'll return 0 else 1
+    result = np.round(output.numpy()) 
     
     return result

@@ -18,7 +18,8 @@
                  if (result == 0) {
                      resultElement.className = 'bg-danger';
                      resultElement.innerHTML = 'Your review was NEGATIVE!';
-                 } else {
+                 } 
+                 else {
                      resultElement.className = 'bg-success';
                      resultElement.innerHTML = 'Your review was POSITIVE!';
                  }
@@ -37,7 +38,7 @@
             <h1>Is your review positive, or negative?</h1>
             <p>Enter your review below and click submit to find out...</p>
             <form method="POST"
-                  action="**REPLACE WITH PUBLIC API URL**"
+                  action="https://r6r7o5uzfa.execute-api.ap-south-1.amazonaws.com/prod"
                   onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
                 <div class="form-group">
                     <label for="review">Review:</label>
